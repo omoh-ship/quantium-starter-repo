@@ -1,4 +1,4 @@
-Sales,Date,Region
+Sales($),Date,Region
 1635.0,2019-06-11,north
 1563.0,2019-06-11,south
 1785.0,2019-06-11,east
