@@ -1,0 +1,13 @@
+.header, .description {
+    textAlign: center;
+    color: #EDEDED;
+}
+
+.radio {
+    color: #EDEDED;
+}
+
+.DateRangePickerInput {
+    background-color: #171717;
+    color: #EDEDED;
+}

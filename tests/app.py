@@ -4,6 +4,15 @@ from plotly.express import line
 from datetime import date
 import pandas as pd
 
+app = Dash(__name__)
+
+
+COLORS = {
+    'background': "#171717",
+    'miscellaneous': "#444444",
+    'text': "#EDEDED",
+}
+
 
 def create_visualisation(data_frame):
     line_plot = line(data_frame, x='Date', y='Sales($)', color='Region')
@@ -15,28 +24,16 @@ def create_visualisation(data_frame):
     return line_plot
 
 
-COLORS = {
-    'background': "#171717",
-    'miscellaneous': "#444444",
-    'text': "#EDEDED",
-}
-
-
-external_stylesheets = [
-    {
-        "rel": "stylesheet",
-    },
-]
-
-app = Dash(__name__, external_stylesheets=external_stylesheets)
-app.title = "Pinky"
-
-header = html.H1(children='Pink Morsel Sales Visualization',
-                 className='header')
-description = html.Div(children='A visualization of the sales of the pink morsel',
-                       className='description')
+header = html.H1(children='Pink Morsel Sales Visualization', style={
+                'textAlign': 'center',
+                'color': COLORS['text']
+            })
+description = html.Div(children='A visualization of the sales of the pink morsel', style={
+                    'textAlign': 'center',
+                    'color': COLORS['text']
+                })
 radio_options = dcc.RadioItems(id='region', options=['north', 'south', 'east', 'west', 'all'], value='all',
-                               className='radio')
+                               style={'color': COLORS['text']})
 date_range = dcc.DatePickerRange(
             id='my-date-picker',
             min_date_allowed=date(2018, 2, 6),
