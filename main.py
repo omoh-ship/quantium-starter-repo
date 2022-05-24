@@ -66,4 +66,4 @@ def combine_csvs():
     # big_df = pd.read_pickle('data/combined')
     print(big_df.tail())
 
-combine_csvs()
+
