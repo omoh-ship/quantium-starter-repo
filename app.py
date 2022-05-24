@@ -41,6 +41,7 @@ date_range = dcc.DatePickerRange(
             start_date=date(2021, 1, 1),
             end_date=date(2021, 2, 28),
             display_format='YYYY-MM-DD')
+
 graph = dcc.Graph(id='graph', figure={})
 
 app.layout = html.Div(style={'backgroundColor': COLORS['background']}, children=[
